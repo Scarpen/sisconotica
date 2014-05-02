@@ -1,0 +1,27 @@
+<h1>Listing tipo_produtos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipo_produtos.each do |tipo_produto| %>
+      <tr>
+        <td><%= tipo_produto.tipo %></td>
+        <td><%= link_to 'Show', tipo_produto %></td>
+        <td><%= link_to 'Edit', edit_tipo_produto_path(tipo_produto) %></td>
+        <td><%= link_to 'Destroy', tipo_produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tipo produto', new_tipo_produto_path %>

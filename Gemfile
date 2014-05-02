@@ -6,6 +6,12 @@ gem 'rails_12factor'
 end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
+gem 'cancan'
+gem 'devise'
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'twitter-bootstrap-rails'
+gem "simple_form"
 
 # Use sqlite3 as the database for Active Record
 group :development do

@@ -1,5 +1,14 @@
 SisconOtica::Application.routes.draw do
 
+  resources :clientes
+
+  resources :tipo_funcionarios
+
+  devise_for :funcionarios
+  resources :tipo_produtos
+
+  resources :produtos
+
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

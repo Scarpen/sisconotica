@@ -1,0 +1,2 @@
+module TipoFuncionariosHelper
+end
