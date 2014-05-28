@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140502193018) do
+ActiveRecord::Schema.define(version: 20140519184353) do
+
+  create_table "clientes", force: true do |t|
+    t.string   "nome"
+    t.string   "endereco"
+    t.string   "foneResidencial"
+    t.string   "foneCelular"
+    t.string   "cpf"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "funcionarios", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -55,6 +65,13 @@ ActiveRecord::Schema.define(version: 20140502193018) do
 
   create_table "tipo_produtos", force: true do |t|
     t.string   "tipo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "vendas", force: true do |t|
+    t.date     "data"
+    t.float    "valorTotal"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

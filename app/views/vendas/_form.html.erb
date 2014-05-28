@@ -1,0 +1,47 @@
+
+
+  <div class="form-inputs">
+  	
+	<%= link_to "Enviar", data: { toggle: "modal", target: "#produto" }, :class=>"btn btn-default btn-primary  " do %>
+	
+	<div class ='icon-plus'> 
+	<%= render :partial => "lista"%> 
+	Abrir
+
+	</div>  
+  	<%= form_tag :controller => 'venda', :action => 'buscar', :method => 'get' do %>
+    	<%= text_field_tag :nome %>
+    	<%= select_tag :categoria, TipoProduto.all.collect { |a| [a.nome,a.id] } %>
+     	<%= submit_tag "Buscar", :name => nil %> 
+     	<%= link_to_function "Clear", "$('campo_busca').clear()" %>
+	<% end %> 
+
+	<% end %>
+    <table>
+    	<tr>
+    		<th> Nome </th>
+    		<th> ValorUnit.</th>
+    		<th> Qntd.</th>
+    		<th> Valor Total </th>
+    		<th> Remover </th>
+		</tr>
+		<% @produtos.each do |p|%>
+		<tr>
+			<th> <%= p.nome %></th>
+    		<th> <%= p.precoVenda %></th>
+    		<th>  </th>
+    		<th>  </th>
+    		<th> Remover </th>
+		</tr>
+		<% end %>
+    </table>
+    
+  </div>
+
+<%= simple_form_for(@venda) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Cadastrar venda"%>
+  </div>
+<% end %>

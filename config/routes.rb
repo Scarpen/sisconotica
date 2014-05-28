@@ -1,5 +1,7 @@
 SisconOtica::Application.routes.draw do
 
+  resources :vendas
+
   resources :clientes
 
   resources :tipo_funcionarios
