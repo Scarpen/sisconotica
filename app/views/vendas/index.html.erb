@@ -27,3 +27,20 @@
 <br>
 
 <%= link_to 'New Venda', new_venda_path %>
+
+<script>
+$(document).ready(function () {
+    $('.botao').click(function () {
+      alert("teste");
+
+    });
+
+    alert("teste");
+    $("#carrinho th a, #carrinho .pagination a #carrinho_busca").live("click", function() {
+      $.getScript(this.href);
+    return false;
+  });
+
+}); 
+
+</script>

@@ -1,0 +1,18 @@
+    
+    <table class="table">
+        <tr>
+          <th>Nome</th>
+          <th>Preço Venda</th>
+          <th></th>
+        </tr>
+		<% @produtos.each do |p|%>
+            <% produto = Produto.find(p) %>
+		<tr>
+			<th> <%= produto.nome %></th>
+    		<th> <%= produto.precoVenda %></th>
+    		<th>  </th>
+    		<th>  </th>
+    		<th> </th>
+		</tr>
+		<% end %>
+    </table>

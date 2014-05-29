@@ -15,7 +15,22 @@ class VendasController < ApplicationController
   # GET /vendas/new
   def new
     @venda = Venda.new
-    @produtos = []
+
+    produtos = params[:produtos]
+    if produtos == nil
+      @produtos = Array.new
+      print "teste ddd"
+    else
+      @produtos = params[:produtos]
+      print "teste d"
+    end
+    
+    if  params[:produto] != nil
+      
+      @produtos << params[:produto]
+    end
+    
+    @produtos_busca = Produto.search(params[:search])
   end
 
   # GET /vendas/1/edit
@@ -61,6 +76,7 @@ class VendasController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -70,10 +86,8 @@ class VendasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def venda_params
-      params.require(:venda).permit(:data, :valorTotal)
+      params.require(:venda).permit(:data, :valorTotal, :produtos_ids, :produtos)
     end
 
-    def buscar
-      
-    end
+
 end

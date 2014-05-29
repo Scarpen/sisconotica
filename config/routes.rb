@@ -1,6 +1,10 @@
 SisconOtica::Application.routes.draw do
 
-  resources :vendas
+  resources :vendas do
+    collection do
+      post 'adicionar'
+    end
+  end
 
   resources :clientes
 

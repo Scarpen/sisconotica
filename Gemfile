@@ -12,6 +12,7 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'twitter-bootstrap-rails'
 gem "simple_form"
+gem 'will_paginate'
 
 # Use sqlite3 as the database for Active Record
 group :development do

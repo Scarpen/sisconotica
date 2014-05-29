@@ -1,5 +1,34 @@
 <h1>New venda</h1>
 
+
+  <div class="form-inputs">
+  	
+
+	
+	<div class ='icon-plus'> 
+	<%= render :partial => "lista"%> 
+	Abrir
+
+	</div>  
+
+
+  	<%= form_tag new_venda_path, :method => 'post',:id=> "carrinho_busca", :class => "form-search" do %>
+    <div class="col-md-3">
+      <%= text_field_tag :search, nil, :placeholder => "Nome", class: "form-control" %>
+    </div>
+    <%= submit_tag "Procurar", :name => nil, data: { toggle: "modal", target: "#produto" }, class: "btn"%>
+  	<% end %>
+    </p>
+  
+	<div id="carrinho"><%= render 'carrinho'  %></div>
+
+
+
+
 <%= render 'form' %>
 
 <%= link_to 'Back', vendas_path %>
+
+<script>
+
+</script>
