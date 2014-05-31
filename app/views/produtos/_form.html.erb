@@ -2,14 +2,21 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :descricao %>
+    <%= f.input :modelo %>
     <%= f.input :precoVenda %>
-    <%= f.input :nome %>
-    <%= f.input :quantidade %>
+    <%= f.input :precoCusto %>
+    <%= f.input :quant_fisica %>
+    <%= f.input :cor %>
+    <%= f.input :tamanho %>
+    <%= f.input :quanti_estoque %>
+    <%= f.input :fornecedor %>
+    <%= f.input :marca %>
+    <%= f.input :imagem %>
+    <%= f.input :unidade %>
     <%= f.association :tipo_produto, label_method: :tipo, value_method: :id, include_blank: false %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, 'Cadastrar Produto' %>
+    <%= f.button :submit, "Cadastrar Produto"%>
   </div>
 <% end %>

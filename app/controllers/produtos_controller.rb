@@ -1,6 +1,6 @@
 class ProdutosController < ApplicationController
   before_action :set_produto, only: [:show, :edit, :update, :destroy]
-  helper_method :sort_column, :sort_direction
+
   # GET /produtos
   # GET /produtos.json
   def index
@@ -69,15 +69,7 @@ class ProdutosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def produto_params
-      params.require(:produto).permit(:descricao, :precoVenda, :nome, :quantidade, :tipo_produto_id, :vendas_ids, :vendas)
-    end
-
-    def sort_column
-      Produto.column_names.include?(params[:sort]) ? params[:sort] : "name"
-    end
-  
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+      params.require(:produto).permit(:modelo, :precoVenda, :precoCusto, :quant_fisica, :cor, :tamanho, :quanti_estoque, :fornecedor, :marca, :imagem, :unidade, :tipo_produto_id)
+      
     end
 end
-

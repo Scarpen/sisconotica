@@ -5,11 +5,11 @@
 
 <%= simple_form_for(@venda) do |f| %>
 <%= f.input :data, :as => :hidden, :input_html => { :value => Time.now } %>
-<%= f.association :produtos %>
+<%= f.input :produtoss, :as => :hidden, :input_html => { :value => @produtos } %>
   <%= f.error_notification %>
 
   <div class="form-actions">
-    <%= f.button :submit, "Cadastrar venda", :produtos => @produtos %>
+    <%= f.button :submit, "Cadastrar venda"%>
   </div>
 <% end %>
 

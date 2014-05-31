@@ -1,16 +1,22 @@
-<h1>Listing clientes</h1>
+<h1>Listando Clientes</h1>
 
-<table>
+<table class="table table-hover table-bordered table-striped">
   <thead>
     <tr>
       <th>Nome</th>
       <th>Endereco</th>
-      <th>Foneresidencial</th>
-      <th>Fonecelular</th>
-      <th>Cpf</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Fone Residencial</th>
+      <th>Fone Celular</th>
+      <th>CPF</th>
+      <th>Foto Cliente</th>
+      <th>Email</th>
+      <th>Data Nascimento</th>
+      <th>Bairro</th>
+      <th>Cidade</th>
+      <th>CEP</th>
+      <th>Estado</th>
+      <th colspan=3></th>
+
     </tr>
   </thead>
 
@@ -20,11 +26,18 @@
         <td><%= cliente.nome %></td>
         <td><%= cliente.endereco %></td>
         <td><%= cliente.foneResidencial %></td>
-        <td><%= cliente.foneCelular %></td>
-        <td><%= cliente.cpf %></td>
-        <td><%= link_to 'Show', cliente %></td>
-        <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
-        <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= cliente.FoneCelular %></td>
+        <td><%= cliente.Cpf %></td>
+        <td><%= cliente.FotoCliente %></td>
+        <td><%= cliente.email %></td>
+        <td><%= cliente.DataNascimento %></td>
+        <td><%= cliente.bairro %></td>
+        <td><%= cliente.cidade %></td>
+        <td><%= cliente.cep %></td>
+        <td><%= cliente.estado %></td>
+        <td><%= link_to 'Mostrar', cliente %></td>
+        <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
+        <td><%= link_to 'Apagar', cliente, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' } %></td>
       </tr>
     <% end %>
   </tbody>

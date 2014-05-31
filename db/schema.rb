@@ -11,14 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529184328) do
+ActiveRecord::Schema.define(version: 20140530224306) do
 
   create_table "clientes", force: true do |t|
     t.string   "nome"
     t.string   "endereco"
     t.string   "foneResidencial"
-    t.string   "foneCelular"
-    t.string   "cpf"
+    t.string   "FoneCelular"
+    t.string   "Cpf"
+    t.string   "FotoCliente"
+    t.string   "email"
+    t.date     "DataNascimento"
+    t.string   "bairro"
+    t.string   "cidade"
+    t.string   "cep"
+    t.string   "estado"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,7 +46,13 @@ ActiveRecord::Schema.define(version: 20140529184328) do
     t.string   "foneCelular"
     t.string   "Endereco"
     t.string   "cpf"
+    t.string   "bairro"
+    t.string   "estado"
+    t.string   "cidade"
+    t.string   "cep"
+    t.string   "imagem"
     t.string   "fotoFuncionario"
+    t.date     "DataNascimento"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,14 +60,39 @@ ActiveRecord::Schema.define(version: 20140529184328) do
   add_index "funcionarios", ["email"], name: "index_funcionarios_on_email", unique: true
   add_index "funcionarios", ["reset_password_token"], name: "index_funcionarios_on_reset_password_token", unique: true
 
-  create_table "produtos", force: true do |t|
-    t.string   "descricao"
-    t.float    "precoVenda"
-    t.string   "nome"
-    t.integer  "quantidade"
+  create_table "models", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tipo_produto_id"
+  end
+
+  add_index "models", ["email"], name: "index_models_on_email", unique: true
+  add_index "models", ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
+
+  create_table "produtos", force: true do |t|
+    t.string   "modelo"
+    t.float    "precoVenda"
+    t.float    "precoCusto"
+    t.string   "quant_fisica"
+    t.string   "cor"
+    t.string   "tamanho"
+    t.string   "quanti_estoque"
+    t.string   "fornecedor"
+    t.string   "marca"
+    t.string   "imagem"
+    t.string   "unidade"
+    t.string   "tipo_produto_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "produtos_vendas", id: false, force: true do |t|

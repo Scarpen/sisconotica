@@ -1,13 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  descricao: MyString
+  modelo: MyString
   precoVenda: 
-  nome: MyString
-  quantidade: 1
+  precoCusto: 
+  quant_fisica: MyString
+  cor: MyString
+  tamanho: MyString
+  quanti_estoque: MyString
+  fornecedor: MyString
+  marca: MyString
+  imagem: MyString
+  unidade: MyString
+  tipo_produto_id: MyString
 
 two:
-  descricao: MyString
+  modelo: MyString
   precoVenda: 
-  nome: MyString
-  quantidade: 1
+  precoCusto: 
+  quant_fisica: MyString
+  cor: MyString
+  tamanho: MyString
+  quanti_estoque: MyString
+  fornecedor: MyString
+  marca: MyString
+  imagem: MyString
+  unidade: MyString
+  tipo_produto_id: MyString

@@ -1,19 +1,54 @@
-<h1>Listing produtos</h1>
+<h1>Listando Produtos</h1>
 
-<!--   <%= form_tag produtos_path, :method => 'get', :id=>"produtos_search", :class => "form-search" do %>
-    <div class="col-md-3">
-      <%= text_field_tag :search, nil, :placeholder => "Nome", class: "form-control" %>
-    </div>
-    <%= submit_tag "Procurar", :name => nil, class: "btn" %>
-  <% end %> -->
   <%= form_tag produtos_path, :method => 'get', :id => "produtos_search" do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
-  <div id="produtos"><%= render 'produtos' %></div>
-<% end %>
+  <% end %>
 
+
+<table class="table table-hover table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Modelo</th>
+      <th>Preco Venda</th>
+      <th>Preco Custo</th>
+      <th>Quantidade Fisica</th>
+      <th>Cor</th>
+      <th>Tamanho</th>
+      <th>Quantidade Estoque</th>
+      <th>Fornecedor</th>
+      <th>Marca</th>
+      <th>Unidade</th>
+      <th>Tipo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @produtos.each do |produto| %>
+      <tr>
+        <td><%= produto.modelo %></td>
+        <td><%= produto.precoVenda %></td>
+        <td><%= produto.precoCusto %></td>
+        <td><%= produto.quant_fisica %></td>
+        <td><%= produto.cor %></td>
+        <td><%= produto.tamanho %></td>
+        <td><%= produto.quanti_estoque %></td>
+        <td><%= produto.fornecedor %></td>
+        <td><%= produto.marca %></td>
+        <td><%= produto.unidade %></td>
+        <td><%= produto.tipo_produto.tipo %></td>
+        <td><%= link_to 'Mostrar', produto %></td>
+        <td><%= link_to 'Editar', edit_produto_path(produto) %></td>
+        <td><%= link_to 'Apagar', produto, method: :delete, data: { confirm: "Você tem certeza que quer apagar?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
 

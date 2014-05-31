@@ -18,7 +18,7 @@ class ProdutosControllerTest < ActionController::TestCase
 
   test "should create produto" do
     assert_difference('Produto.count') do
-      post :create, produto: { descricao: @produto.descricao, nome: @produto.nome, precoVenda: @produto.precoVenda, quantidade: @produto.quantidade }
+      post :create, produto: { cor: @produto.cor, fornecedor: @produto.fornecedor, imagem: @produto.imagem, marca: @produto.marca, modelo: @produto.modelo, precoCusto: @produto.precoCusto, precoVenda: @produto.precoVenda, quant_fisica: @produto.quant_fisica, quanti_estoque: @produto.quanti_estoque, tamanho: @produto.tamanho, tipo_produto_id: @produto.tipo_produto_id, unidade: @produto.unidade }
     end
 
     assert_redirected_to produto_path(assigns(:produto))
@@ -35,7 +35,7 @@ class ProdutosControllerTest < ActionController::TestCase
   end
 
   test "should update produto" do
-    patch :update, id: @produto, produto: { descricao: @produto.descricao, nome: @produto.nome, precoVenda: @produto.precoVenda, quantidade: @produto.quantidade }
+    patch :update, id: @produto, produto: { cor: @produto.cor, fornecedor: @produto.fornecedor, imagem: @produto.imagem, marca: @produto.marca, modelo: @produto.modelo, precoCusto: @produto.precoCusto, precoVenda: @produto.precoVenda, quant_fisica: @produto.quant_fisica, quanti_estoque: @produto.quanti_estoque, tamanho: @produto.tamanho, tipo_produto_id: @produto.tipo_produto_id, unidade: @produto.unidade }
     assert_redirected_to produto_path(assigns(:produto))
   end
 

@@ -3,11 +3,6 @@
 <p>
   <strong>Tipo:</strong>
   <%= @tipo_produto.tipo %>
-
-  <% @produtos = @tipo.produtos %>
-  <% @produtos.each do |e| %>
-  <%= e.nome %>
-  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_tipo_produto_path(@tipo_produto) %> |

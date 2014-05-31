@@ -1,7 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nome: MyString
   endereco: MyString
   foneResidencial: MyString
   FoneCelular: MyString
@@ -15,7 +14,6 @@ one:
   estado: MyString
 
 two:
-  nome: MyString
   endereco: MyString
   foneResidencial: MyString
   FoneCelular: MyString

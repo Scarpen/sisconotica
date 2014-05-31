@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Descricao:</strong>
-  <%= @produto.descricao %>
+  <strong>Modelo:</strong>
+  <%= @produto.modelo %>
 </p>
 
 <p>
@@ -11,13 +11,53 @@
 </p>
 
 <p>
-  <strong>Nome:</strong>
-  <%= @produto.nome %>
+  <strong>Precocusto:</strong>
+  <%= @produto.precoCusto %>
 </p>
 
 <p>
-  <strong>Quantidade:</strong>
-  <%= @produto.quantidade %>
+  <strong>Quant fisica:</strong>
+  <%= @produto.quant_fisica %>
+</p>
+
+<p>
+  <strong>Cor:</strong>
+  <%= @produto.cor %>
+</p>
+
+<p>
+  <strong>Tamanho:</strong>
+  <%= @produto.tamanho %>
+</p>
+
+<p>
+  <strong>Quanti estoque:</strong>
+  <%= @produto.quanti_estoque %>
+</p>
+
+<p>
+  <strong>Fornecedor:</strong>
+  <%= @produto.fornecedor %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @produto.marca %>
+</p>
+
+<p>
+  <strong>Imagem:</strong>
+  <%= @produto.imagem %>
+</p>
+
+<p>
+  <strong>Unidade:</strong>
+  <%= @produto.unidade %>
+</p>
+
+<p>
+  <strong>Tipo produto:</strong>
+  <%= @produto.tipo_produto.tipo %>
 </p>
 
 <%= link_to 'Edit', edit_produto_path(@produto) %> |

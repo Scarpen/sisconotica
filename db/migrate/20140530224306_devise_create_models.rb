@@ -1,6 +1,6 @@
-class DeviseCreateFuncionarios < ActiveRecord::Migration
+class DeviseCreateModels < ActiveRecord::Migration
   def change
-    create_table(:funcionarios) do |t|
+    create_table(:models) do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -30,25 +30,13 @@ class DeviseCreateFuncionarios < ActiveRecord::Migration
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.string :nome
-      t.string :foneResidencial
-      t.string :foneCelular
-      t.string :Endereco
-      t.string :cpf
-      t.string :bairro
-      t.string :estado
-      t.string :cidade
-      t.string :cep
-      t.string :imagem
-      t.string :fotoFuncionario
-      t.date :DataNascimento
 
       t.timestamps
     end
 
-    add_index :funcionarios, :email,                unique: true
-    add_index :funcionarios, :reset_password_token, unique: true
-    # add_index :funcionarios, :confirmation_token,   unique: true
-    # add_index :funcionarios, :unlock_token,         unique: true
+    add_index :models, :email,                unique: true
+    add_index :models, :reset_password_token, unique: true
+    # add_index :models, :confirmation_token,   unique: true
+    # add_index :models, :unlock_token,         unique: true
   end
 end

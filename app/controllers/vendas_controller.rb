@@ -1,6 +1,7 @@
 class VendasController < ApplicationController
   before_action :set_venda, only: [:show, :edit, :update, :destroy]
 
+
   # GET /vendas
   # GET /vendas.json
   def index
@@ -19,10 +20,8 @@ class VendasController < ApplicationController
     produtos = params[:produtos]
     if produtos == nil
       @produtos = Array.new
-      print "teste ddd"
     else
       @produtos = params[:produtos]
-      print "teste d"
     end
     
     if  params[:produto] != nil
@@ -40,8 +39,15 @@ class VendasController < ApplicationController
   # POST /vendas
   # POST /vendas.json
   def create
-    @venda = Venda.new(venda_params)
-
+    @venda = Venda.new
+    @venda.data = params[:data]
+    @venda.valorTotal = 0
+    produtos = []
+    produtos = params[:produtos]
+    produtos.each do |t|
+      produto Produto.find(t)
+      @venda.valorTotal += produto.valorVenda
+    end
     respond_to do |format|
       if @venda.save
         format.html { redirect_to @venda, notice: 'Venda was successfully created.' }
@@ -51,6 +57,38 @@ class VendasController < ApplicationController
         format.json { render json: @venda.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def fazervenda
+    @venda = Venda.new
+    @venda.data = Time.now
+    @venda.valorTotal = 0
+    params[:produtos].each do |t|
+      produto Produto.find(t)
+      @venda.valorTotal += produto.valorVenda
+    end
+
+      if @venda.save
+        params[:produtos].each do |t|
+          produto Produto.find(t)
+          venda = Venda.last
+          venda_produto = VendaProduto.new
+          venda_produto.produto_id = produto.id
+          venda_produto.venda_id = venda.id
+          venda_produto.save
+        end
+        format.html { redirect_to @venda, notice: 'Venda was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @venda }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @venda.errors, status: :unprocessable_entity }
+      end
+
+
+
+
+
+
   end
 
   # PATCH/PUT /vendas/1

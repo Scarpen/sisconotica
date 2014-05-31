@@ -19,7 +19,7 @@
               <td> <%= p.descricao %></td>
               <td> <%= p.precoVenda %></td>
               <td> <%= p.quantidade %></td>
-              <td> <%= link_to new_venda_path,:produtos=> @produtos, :produto=> p %> </td>
+              <td> <%= link_to new_venda_path,:produtos=> @produtos, :produto=> p.id %> </td>
             </tr>
           <% end %>
       </table>
