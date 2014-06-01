@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+f = Funcionario.new
+f.nome = "Admin"
+f.cpf = "123456789"
+f.password = "administrador"
+f.password_confirmation = "administrador"
+f.email = "admin@sisconotica.com"
+f.save

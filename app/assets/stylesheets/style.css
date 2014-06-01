@@ -17,7 +17,7 @@ SELECTION STYLING
 BODY STYLING
 *******************/
 
-img {
+.logo {
    display: block;
    width: 400px;
    height: 285px;
@@ -26,6 +26,7 @@ img {
    top:50%;
    margin-left:-210px;
    margin-top:-400px;
+
 }
 
 * {
@@ -42,6 +43,7 @@ body {
 	text-align: left;
 	text-decoration: none;
 	height: 500px;
+	
 }
 
 #wrapper {
