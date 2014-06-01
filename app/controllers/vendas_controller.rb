@@ -1,4 +1,5 @@
 class VendasController < ApplicationController
+  before_action :authenticate_funcionario!
   before_action :set_venda, only: [:show, :edit, :update, :destroy]
 
 

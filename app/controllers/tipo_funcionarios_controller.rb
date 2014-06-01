@@ -1,4 +1,5 @@
 class TipoFuncionariosController < ApplicationController
+  before_action :authenticate_funcionario!
   before_action :set_tipo_funcionario, only: [:show, :edit, :update, :destroy]
 
   # GET /tipo_funcionarios

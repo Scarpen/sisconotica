@@ -25,7 +25,7 @@ img {
    left:50%;
    top:50%;
    margin-left:-210px;
-   margin-top:-350px;
+   margin-top:-400px;
 	
 }
 
@@ -37,7 +37,7 @@ img {
 }
 
 body {
-	background: url('images/bg.png');
+	
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight:300;
 	text-align: left;
@@ -84,7 +84,7 @@ body {
 LOGIN FORM
 *******************/
 
-.simple_form {
+.login-form {
 	width: 300px;
 	margin: 0 auto;
 	position: relative;
@@ -103,11 +103,11 @@ LOGIN FORM
 HEADER
 *******************/
 
-.simple_form .header {
+.login-form .header {
 	padding: 1px 30px 30px 30px;
 }
 
-.simple_form .header h1 {
+.login-form .header h1 {
 	font-family: 'Bree Serif', serif;
 	font-weight: 300;
 	font-size: 28px;
@@ -117,7 +117,7 @@ HEADER
 	margin-bottom: 10px;
 }
 
-.simple_form .header span {
+.login-form .header span {
 	font-size: 11px;
 	line-height: 16px;
 	color: #678889;
@@ -128,12 +128,12 @@ HEADER
 CONTENT
 *******************/
 
-.simple_form .content {
+.login-form .content {
 	padding: 0 30px 25px 30px;
 }
 
 /* Input field */
-.simple_form .content .input {
+.login-form .content .input {
 	width: 188px;
 	padding: 15px 25px;
 	
@@ -153,16 +153,16 @@ CONTENT
 }
 
 /* Second input field */
-.simple_form .content .password, .simple_form .content .pass-icon {
+.login-form .content .password, .login-form .content .pass-icon {
 	margin-top: 25px;
 }
 
-.simple_form .content .input:hover {
+.login-form .content .input:hover {
 	background: #dfe9ec;
 	color: #414848;
 }
 
-.simple_form .content .input:focus {
+.login-form .content .input:focus {
 	background: #dfe9ec;
 	color: #414848;
 	
@@ -196,7 +196,6 @@ CONTENT
 	background: rgba(65,72,72,0.75) url(images/pass-icon.png) no-repeat center;
 }
 
-
 .content input:focus + div{
 	left: -46px;
 }
@@ -214,7 +213,7 @@ CONTENT
 FOOTER
 *******************/
 
-.simple_form .footer {
+.login-form .footer {
 	padding: 25px 30px 40px 30px;
 	overflow: auto;
 	
@@ -227,7 +226,7 @@ FOOTER
 }
 
 /* Login button */
-.simple_form .footer .button {
+.login-form .footer .button {
 	float:center;
 	padding: 11px 25px;
 	margin-left: 75px;
@@ -249,7 +248,7 @@ FOOTER
 	-webkit-box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
 }
 
-.simple_form .footer .button:hover {
+.login-form .footer .button:hover {
 	background: #797979;
 	border: 1px solid rgba(256,256,256,0.75);
 	
@@ -258,7 +257,7 @@ FOOTER
 	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
 }
 
-.simple_form .footer .button:focus {
+.login-form .footer .button:focus {
 	position: relative;
 	bottom: -1px;
 	

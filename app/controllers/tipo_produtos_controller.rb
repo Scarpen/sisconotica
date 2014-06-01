@@ -1,4 +1,5 @@
 class TipoProdutosController < ApplicationController
+  before_action :authenticate_funcionario!
   before_action :set_tipo_produto, only: [:show, :edit, :update, :destroy]
 
   # GET /tipo_produtos
