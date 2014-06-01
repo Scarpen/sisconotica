@@ -1,10 +1,10 @@
 class ProdutosController < ApplicationController
   before_action :set_produto, only: [:show, :edit, :update, :destroy]
-
   # GET /produtos
   # GET /produtos.json
   def index
     @produtos = Produto.paginate(page: params[:page], per_page: 15).search(params[:search]).order("#{params[:sort]} #{params[:direction]}")
+
   end
 
   # GET /produtos/1

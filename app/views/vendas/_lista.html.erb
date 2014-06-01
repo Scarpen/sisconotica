@@ -5,24 +5,35 @@
         <h4 class="modal-title">Selecionar Produto </h4>
       </div>
       <div class="well">
-      <table class="table">
-        <tr>
-          <td> Nome </td>
-          <td> Descrição</td>
-          <td> Preço Unit. </td>
-          <td> Quantidade em Estoque </td>
-          <td> Selecionar </td>
-        </tr>
-      <% @produtos_busca.each do |p| %>
-            <tr>
-              <td> <%= p.nome %></td>
-              <td> <%= p.descricao %></td>
-              <td> <%= p.precoVenda %></td>
-              <td> <%= p.quantidade %></td>
-              <td> <%= link_to new_venda_path,:produtos=> @produtos, :produto=> p.id %> </td>
-            </tr>
-          <% end %>
-      </table>
+<table class="table table-hover table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Modelo</th>
+      <th>Preco Venda</th>
+      <th>Quantidade Fisica</th>
+      <th>Cor</th>
+      <th>Tamanho</th>
+      <th>Quantidade Estoque</th>
+      <th>Selecionar</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @produtos_busca.each do |produto| %>
+      <tr>
+        <td><%= produto.modelo %></td>
+        <td><%= produto.precoVenda %></td>
+        <td><%= produto.quant_fisica %></td>
+        <td><%= produto.cor %></td>
+        <td><%= produto.quanti_estoque %></td>
+        <td><%= produto.unidade %></td>
+        <td> <%= link_to new_venda_path,:produtos=> @produtos, :produto=> produto.id %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+              
 
       </div>
     </div><!-- /.modal-content -->

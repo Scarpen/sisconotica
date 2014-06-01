@@ -13,7 +13,7 @@ gem 'carrierwave'
 gem 'twitter-bootstrap-rails'
 gem "simple_form"
 gem 'will_paginate'
-
+gem 'wicked_pdf'
 # Use sqlite3 as the database for Active Record
 group :development do
 gem 'sqlite3'

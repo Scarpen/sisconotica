@@ -57,7 +57,7 @@
 
 <p>
   <strong>Tipo produto:</strong>
-  <%= @produto.tipo_produto.tipo %>
+  <%= @produto.tipo_produto.tipo if @produto.tipo_produto%>
 </p>
 
 <%= link_to 'Edit', edit_produto_path(@produto) %> |

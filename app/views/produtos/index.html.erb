@@ -21,7 +21,6 @@
       <th>Fornecedor</th>
       <th>Marca</th>
       <th>Unidade</th>
-      <th>Tipo</th>
       <th></th>
       <th></th>
       <th></th>
@@ -41,7 +40,6 @@
         <td><%= produto.fornecedor %></td>
         <td><%= produto.marca %></td>
         <td><%= produto.unidade %></td>
-        <td><%= produto.tipo_produto.tipo %></td>
         <td><%= link_to 'Mostrar', produto %></td>
         <td><%= link_to 'Editar', edit_produto_path(produto) %></td>
         <td><%= link_to 'Apagar', produto, method: :delete, data: { confirm: "Você tem certeza que quer apagar?" } %></td>
