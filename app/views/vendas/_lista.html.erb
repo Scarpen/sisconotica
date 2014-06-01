@@ -28,7 +28,7 @@
         <td><%= produto.cor %></td>
         <td><%= produto.quanti_estoque %></td>
         <td><%= produto.unidade %></td>
-        <td> <%= link_to new_venda_path,:produtos=> @produtos, :produto=> produto.id %> </td>
+        <td> <%= link_to new_venda_path,:produtos=> @produtos, :produto=> produto %> </td>
       </tr>
     <% end %>
   </tbody>

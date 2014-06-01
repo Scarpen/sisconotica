@@ -6,8 +6,6 @@
       <th>Data</th>
       <th>Valortotal</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -17,8 +15,6 @@
         <td><%= venda.data %></td>
         <td><%= venda.valorTotal %></td>
         <td><%= link_to 'Show', venda %></td>
-        <td><%= link_to 'Edit', edit_venda_path(venda) %></td>
-        <td><%= link_to 'Destroy', venda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

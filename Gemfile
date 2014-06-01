@@ -3,6 +3,7 @@
 group :production do
 gem 'pg'
 gem 'rails_12factor'
+gem "wkhtmltopdf-heroku"
 end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
@@ -15,7 +16,7 @@ gem "simple_form"
 gem 'will_paginate'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf'
-gem "wkhtmltopdf-heroku"
+
 # Use sqlite3 as the database for Active Record
 group :development do
 gem 'sqlite3'

@@ -4,11 +4,11 @@ class CreateClientes < ActiveRecord::Migration
       t.string :nome
       t.string :endereco
       t.string :foneResidencial
-      t.string :FoneCelular
-      t.string :Cpf
-      t.string :FotoCliente
+      t.string :foneCelular
+      t.string :cpf
+      t.string :fotoCliente
       t.string :email
-      t.date :DataNascimento
+      t.date :dataNascimento
       t.string :bairro
       t.string :cidade
       t.string :cep

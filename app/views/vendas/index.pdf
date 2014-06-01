@@ -1,0 +1,26 @@
+<table width="100%" >
+	<thead style="text-align: left;">
+		<tr>
+			<th> Codigo </th>
+			<th> Funcionario </th>
+			<th> Produtos </th>
+			<th> Data </th>
+			<th> Valor Total </th>
+		</tr>
+	</thead>
+	<tbody>
+<% @vendas.each do |v| %>
+	<tr >
+		<td style="vertical-align: top;"> <%= v.id %> </td>
+		<td style="vertical-align: top;"> <%= Funcionario.find(v.funcionario_id).nome %> </td>
+		<td> <% VendasProdutos.produtos(v.id).each do |p|%>
+				<% produto = Produto.find(p.produto_id) %>
+				<%= produto.modelo %> <br>	
+			<% end %>
+		</td>
+		<td style="vertical-align: top;"> <%= v.data %></td>
+		<td style="vertical-align: top;"> <%= v.valorTotal %></td>
+	</tr>
+<% end %>
+</tbody>
+</table>

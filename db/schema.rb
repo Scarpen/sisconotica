@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140530215515) do
+ActiveRecord::Schema.define(version: 20140601180417) do
 
   create_table "clientes", force: true do |t|
     t.string   "nome"
     t.string   "endereco"
     t.string   "foneResidencial"
-    t.string   "FoneCelular"
-    t.string   "Cpf"
-    t.string   "FotoCliente"
+    t.string   "foneCelular"
+    t.string   "cpf"
+    t.string   "fotoCliente"
     t.string   "email"
-    t.date     "DataNascimento"
+    t.date     "dataNascimento"
     t.string   "bairro"
     t.string   "cidade"
     t.string   "cep"
@@ -77,11 +77,6 @@ ActiveRecord::Schema.define(version: 20140530215515) do
     t.datetime "updated_at"
   end
 
-  create_table "produtos_vendas", id: false, force: true do |t|
-    t.integer "venda_id"
-    t.integer "produtos_id"
-  end
-
   create_table "tipo_funcionarios", force: true do |t|
     t.string   "tipo"
     t.datetime "created_at"
@@ -97,6 +92,17 @@ ActiveRecord::Schema.define(version: 20140530215515) do
   create_table "vendas", force: true do |t|
     t.date     "data"
     t.float    "valorTotal"
+    t.integer  "cliente_id"
+    t.integer  "funcionario_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "vendas_produtos", force: true do |t|
+    t.integer  "produto_id"
+    t.integer  "venda_id"
+    t.integer  "quantidade"
+    t.float    "valorUnit"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

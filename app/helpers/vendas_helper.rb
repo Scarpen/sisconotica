@@ -1,5 +1,6 @@
 module VendasHelper
-	def adicionar produto
-		@produtos << produto
+	def variaveis
+		@clientes = Cliente.all
+		cliente_id = nil 
 	end
 end

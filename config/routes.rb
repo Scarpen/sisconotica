@@ -2,13 +2,7 @@ SisconOtica::Application.routes.draw do
 
   resources :nomes
 
-  resources :vendas do
-    collection do
-      post 'adicionar'
-      post 'fazervenda'
-    end
-  end
-
+  resources :vendas 
   resources :clientes
 
   resources :tipo_funcionarios

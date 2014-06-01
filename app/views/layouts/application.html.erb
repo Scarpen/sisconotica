@@ -2,13 +2,13 @@
 <html>
 <head>
   <title>SisconOtica</title>
-      <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-       <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    'application' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-
+<% if funcionario_signed_in? %>
 <%= link_to "Produtos", :produtos %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
@@ -20,6 +20,10 @@
 			<%= link_to "Login", new_funcionario_session_path, class: "blog-nav-item pull-right" %>
 		<% end %>
 <%= yield %>
+<% else %>
+<%= yield %>
+
+<%end%>
 
 
 </body>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+<head>
+    <meta charset="UTF-8" /> 
+    <title>
+        HTML Document Structure
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../../assets/stylesheets/style.css" />
+</head>
+<body>
+
+<div>
+    <img src="../../assets/images/logo.png" alt="" />
+</div>
+
+<div id="wrapper">
+	<%= simple_form_for(resource, class: 'login-form',as: resource_name, url: session_path(resource_name)) do |f| %>
+			<div class="header">
+		
+		
+		</div>
+	<div class="content">
+    <%= f.input :cpf, required: false, autofocus: true, :placeholder => "CPF" %>
+    		<div class="user-icon"></div>
+    <%= f.input :password, required: false, class: "input password", :placeholder => "Senha" %>
+ 		<div class="pass-icon"></div>		
+		</div>
+	<div class="pass-icon"></div>		
+	</div>
+  <div class="footer">
+    <%= f.button :submit, "Sign in", class: "button" %>
+  </div>
+<% end %>
+</div>
+
+
+</body>
+</html>
