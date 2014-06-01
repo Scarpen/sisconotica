@@ -1,0 +1,33 @@
+<table class="table table-hover table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Modelo</th>
+      <th>Preco Venda</th>
+      <th>Preco Custo</th>
+      <th>Quantidade Fisica</th>
+      <th>Cor</th>
+      <th>Tamanho</th>
+      <th>Quantidade Estoque</th>
+      <th>Fornecedor</th>
+      <th>Marca</th>
+      <th>Unidade</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @produtos.each do |produto| %>
+      <tr>
+        <td><%= produto.modelo %></td>
+        <td><%= produto.precoVenda %></td>
+        <td><%= produto.precoCusto %></td>
+        <td><%= produto.quant_fisica %></td>
+        <td><%= produto.cor %></td>
+        <td><%= produto.tamanho %></td>
+        <td><%= produto.quanti_estoque %></td>
+        <td><%= produto.fornecedor %></td>
+        <td><%= produto.marca %></td>
+        <td><%= produto.unidade %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

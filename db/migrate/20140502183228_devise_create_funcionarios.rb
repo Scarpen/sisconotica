@@ -33,7 +33,7 @@ class DeviseCreateFuncionarios < ActiveRecord::Migration
       t.string :nome
       t.string :foneResidencial
       t.string :foneCelular
-      t.string :Endereco
+      t.string :endereco
       t.string :cpf
       t.string :bairro
       t.string :estado
@@ -41,7 +41,7 @@ class DeviseCreateFuncionarios < ActiveRecord::Migration
       t.string :cep
       t.string :imagem
       t.string :fotoFuncionario
-      t.date :DataNascimento
+      t.date :dataNascimento
 
       t.timestamps
     end

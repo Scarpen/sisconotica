@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20140530215515) do
     t.string   "nome"
     t.string   "foneResidencial"
     t.string   "foneCelular"
-    t.string   "Endereco"
+    t.string   "endereco"
     t.string   "cpf"
     t.string   "bairro"
     t.string   "estado"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20140530215515) do
     t.string   "cep"
     t.string   "imagem"
     t.string   "fotoFuncionario"
-    t.date     "DataNascimento"
+    t.date     "dataNascimento"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

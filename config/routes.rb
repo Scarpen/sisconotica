@@ -13,7 +13,7 @@ SisconOtica::Application.routes.draw do
 
   resources :tipo_funcionarios
 
-  devise_for :funcionarios
+  devise_for :funcionarios,  :controllers => { :registrations => "funcionarios/registrations" }
   resources :tipo_produtos
 
   resources :produtos

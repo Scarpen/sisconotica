@@ -5,6 +5,12 @@ class ProdutosController < ApplicationController
   def index
     @produtos = Produto.paginate(page: params[:page], per_page: 15).search(params[:search]).order("#{params[:sort]} #{params[:direction]}")
 
+  respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => "Lista_Produtos"
+      end
+    end
   end
 
   # GET /produtos/1
