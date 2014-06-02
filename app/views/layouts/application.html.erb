@@ -23,9 +23,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">SisconOtica</a>
+ 
           <div class="container nav-collapse">
+
             <ul class="nav">
+            <li>   <%= link_to root_path do %>
+          <img src="<%=asset_path 'logop.png'%>" style="height: 25px; margin-left:-20px"/>
+          <% end %> </li>
               <li><%= link_to "Inicio", root_path  %></li>
               <li><%= link_to "Segurança", edit_funcionario_registration_path(current_funcionario)  %></li>
               <li><%= link_to "Ajuda", "#"  %></li>

@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20140602040113) do
     t.date     "dataNascimento"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "type"
+    t.string   "tipo"
   end
 
   add_index "funcionarios", ["email"], name: "index_funcionarios_on_email", unique: true
