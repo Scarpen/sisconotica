@@ -1,22 +1,45 @@
 <%= simple_form_for(@produto) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
+<div class="row"> 
+    <div class="span4"> 
     <%= f.input :modelo %>
+    </div>
+    <div class="span4"> 
     <%= f.input :precoVenda %>
+    </div>
+    <div class="span4"> 
     <%= f.input :precoCusto %>
+    </div>
+    <div class="span4"> 
     <%= f.input :quant_fisica %>
+    </div>
+    <div class="span4"> 
     <%= f.input :cor %>
+    </div>
+    <div class="span4"> 
     <%= f.input :tamanho %>
+    </div>
+    <div class="span4"> 
     <%= f.input :quanti_estoque %>
+    </div>
+    <div class="span4"> 
     <%= f.input :fornecedor %>
+    </div>
+    <div class="span4"> 
     <%= f.input :marca %>
+    </div>
+    <div class="span4"> 
     <%= f.input :imagem %>
+    </div>
+    <div class="span4"> 
     <%= f.input :unidade %>
+    </div>
+    <div class="span4"> 
     <%= f.association :tipo_produto, label_method: :tipo, value_method: :id, include_blank: false %>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Cadastrar Produto"%>
+    <%= f.button :submit, "Cadastrar Produto", :class => "btn btn-default"%>
   </div>
 <% end %>

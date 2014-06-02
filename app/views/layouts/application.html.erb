@@ -6,29 +6,78 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body style="background: url(<%=asset_path 'images/bg.png'%>);">
-<div class="corpo">
-    <div class="top" >
-      <% if funcionario_signed_in? %>
+<body style="background-color: #f4f4f4; margin-bottom: 0px; height:100%;background-image: url(<%=asset_path 'fundo.jpg'%>) no-repeat;">
+<% if funcionario_signed_in? %>
       <%= link_to "Produtos", :produtos %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <% if funcionario_signed_in? %>
-      <%= link_to "Logout", destroy_funcionario_session_path, method: 'delete', class: "blog-nav-item pull-right" %>
-      <%= link_to current_funcionario.email, edit_funcionario_registration_path(current_funcionario), class: "blog-nav-item pull-right" %>
-      <% else %>
-      <%= link_to "Register", new_funcionario_registration_path, class: "blog-nav-item pull-right" %>
-      <%= link_to "Login", new_funcionario_session_path, class: "blog-nav-item pull-right" %>
+
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">SisconOtica</a>
+          <div class="container nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Inicio", root_path  %></li>
+              <li><%= link_to "Segurança", edit_funcionario_registration_path(current_funcionario)  %></li>
+              <li><%= link_to "Ajuda", "#"  %></li>
+              <li><%= link_to "Sair", destroy_funcionario_session_path, method: 'delete', class: "blog-nav-item pull-right" %>  </li> 
+
+            </ul>
+      <% if funcionario_signed_in? %>  
+            <%= link_to current_funcionario.email, edit_funcionario_registration_path(current_funcionario), class: "blog-nav-item pull-right", style: "margin-top:10px;" %>
       <% end %>
+        <% if current_funcionario.tipo == "Administrador" %>
+        <img src="<%=asset_path 'admin.png'%>" class="pull-right" style="margin-top: 4px">
+        
+        <% else %>
+        <img src="<%=asset_path 'vendedor.png'%>" class="pull-right" style="margin-top: 4px">
+        <% end %>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
-    </div>
-    <div class="leftprojeto">
-    </div>
+    <div class="container" style="margin-top: 23px;margin-bottom: 0px; background: #f4f4f4; ">
+        <div class="row" >
+          <div class="span2">
+            <div class="sidebar-nav" style="margin-left: 30px; margin-top: 20px;">
+              
+                <%= link_to cadastrar_path do %>
+                	<div class="cadastrarbutton"></div>
+                <%end%>
+                <%= link_to consultar_path do %>
+                	<div class="consultarbutton"></div>
+                <%end%>
+                <%= link_to relatorios_path do %>
+                	<div class="relatoriosbutton"></div>
+                <%end%>
+                <%= link_to new_venda_path do %>
+                	<div class="vendasbutton"></div>
+                <%end%>
+            </div><!--/.well -->
+          </div><!--/span-->
+          <div class="span9">
+          	<div style="margin-left: 50px;">
+            <%= bootstrap_flash %>
+            <% if notice != nil || alert != nil %>
+            <p class="notice"><%= notice %></p>
+      		<p class="alert"><%= alert %></p>
+      		<% end %>
+            <%= yield %>
+            </div>
+            </div>
 
-    <div class="rightprojeto">
-      <%= yield %>
-    </div>
-  </div>
+        </div><!--/row-->
+      <footer>
+        <p>&copy; Company 2014</p>
+      </footer>
+
+    </div> 
   <% else %>
   <%= yield %>
   <%end%>

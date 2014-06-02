@@ -11,7 +11,10 @@ SisconOtica::Application.routes.draw do
   resources :tipo_produtos
 
   resources :produtos
-
+  get '/cadastrar' => 'welcome#cadastrar'
+  get '/consultar' => 'welcome#consultar'
+  get '/relatorios' => 'welcome#relatorios'
+  get '/funcionarios' => 'welcome#listafuncionarios'
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

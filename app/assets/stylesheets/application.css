@@ -36,3 +36,43 @@
 	float:right;
 
 }
+
+.cadastrarbutton{
+	margin-left: 10px;
+	background: url("botao1.jpg") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.cadastrarbutton:hover{
+	background: url("botao1-2.jpg") no-repeat;
+}
+.consultarbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: url("botao2.jpg") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.consultarbutton:hover{
+	background: url("botao2-2.jpg") no-repeat;
+}
+.relatoriosbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: url("botao3.jpg") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.relatoriosbutton:hover{
+	background: url("botao3-2.jpg") no-repeat;
+}
+.vendasbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: url("botao4.jpg") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.vendasbutton:hover{
+	background: url("botao4-2.jpg") no-repeat;
+}

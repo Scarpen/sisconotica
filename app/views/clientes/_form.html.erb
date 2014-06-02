@@ -1,31 +1,51 @@
-<%= simple_form_for(@cliente) do |f| %>
+<%= simple_form_for(@cliente ,:html => { class: 'form-horizontal' }) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :nome, label: "Nome Completo:", :require => true %>
-    <%= f.input :endereco, :require => true %>
-    <%= f.input :foneResidencial, input_html: { class: 'telefone'} %>
-    <%= f.input :foneCelular, input_html: { class: 'telefone'}, :require => true %>
-    <%= f.input :cpf, input_html: { id: 'cpf'}, :require => true %>
-    <%= f.input :fotoCliente %>
-    <%= f.input :email, :require => true %>
-    <div id="datetimepicker" class="input-append date">
-              <input data-format="dd/MM/yyyy hh:mm:ss" type="text" name="atividade[prazo]"></input>
-              <span class="add-on">
-                <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-                </i>
-              </span>
+  <div class="row">
+    <div class="span4">
+     <%= f.input :nome, label: "Nome Completo: ", required: true, autofocus: true %>
+     </div>
+     <div class="span4" style="margin-left: 80px;">
+    <%= f.input :cpf, label: "CPF", required: true, input_html: {id: 'cpf'}%>
     </div>
-    <%= f.input :bairro %>
-    <%= f.input :cidade %>
-    <%= f.input :cep, input_html: { id: 'cep'} %>
+        <div class="span9">
+    <%= f.input :dataNascimento, label: "Data Nascimento" %>
+    </div>
+    <div class="span4">
+    <%= f.input :email, label: "Email", required: true  %>
+    </div>
+
+    <div class="span4"  style="margin-left: 80px;">
+    <%= f.input :foneResidencial, label: "Telefone Residencial", input_html: { class: 'telefone'}%>
+    </div>
+    <div class="span4" >
+    <%= f.input :foneCelular, label: "Telefone Celular" , input_html: { class: 'telefone'}%>
+    </div>
+    <div class="span4" style="margin-left: 80px;">
+    <%= f.input :endereco, label: "Endereço" %>
+    </div>
+    <div class="span4" >
+    <%= f.input :bairro, label: "Bairro"%>
+    </div>
+    <div class="span4"  style="margin-left: 80px;">
     <%= f.input :estado, :label => "Estado", :collection => ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR,","SC","SP","SE","TO"], :selected => "Escolha" %>
-  </div>
+    </div>
+    <div class="span4" >
+    <%= f.input :cidade, label: "Cidade"%>
+    </div>
+    <div class="span4"  style="margin-left: 80px;">
+    <%= f.input :cep, label: "CEP", input_html: {id: 'cep'}%>
+    </div>
+    <div class="span9">
+    <%= f.button :submit, "Registrar", class: "btn btn-default"%>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Cadastrar cliente"%>
   </div>
-<% end %>
-<script type="text/javascript">
-
-</script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <% end %>
