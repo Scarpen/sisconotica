@@ -1,21 +1,12 @@
-<h1>New venda</h1>
+<br>
+<h2>Efetuar Venda</h2>
 
 
   <div class="form-inputs">
   	
-
-	
-	<div class ='icon-plus'> 
 	<%= render :partial => "lista"%> 
-	</div>  
-
-<%= submit_tag "Adicionar Produto", :name => nil, data: { toggle: "modal", target: "#produto" }, class: "btn"%>
-  
+	<center>
+	<%= submit_tag "Adicionar Produto", :name => nil, data: { toggle: "modal", target: "#produto" }, class: "relatoriogerar"%>
+  </center>
 	<div id="carrinho"><%= render 'carrinho'  %></div>
 
-
-<%= link_to 'Back', vendas_path %>
-
-<script>
-
-</script>

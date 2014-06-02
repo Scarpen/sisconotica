@@ -1,10 +1,9 @@
-<h1>Listing tipo_produtos</h1>
+<h1>Listando Categorias</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Tipo</th>
-      <th></th>
+      <th>Categoria</th>
       <th></th>
       <th></th>
     </tr>
@@ -14,9 +13,8 @@
     <% @tipo_produtos.each do |tipo_produto| %>
       <tr>
         <td><%= tipo_produto.tipo %></td>
-        <td><%= link_to 'Show', tipo_produto %></td>
-        <td><%= link_to 'Edit', edit_tipo_produto_path(tipo_produto) %></td>
-        <td><%= link_to 'Destroy', tipo_produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_tipo_produto_path(tipo_produto) %></td>
+        <td><%= link_to 'Apagar', tipo_produto, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Tipo produto', new_tipo_produto_path %>
+<%= link_to 'Cadastrar Categoria', new_tipo_produto_path, class: "relatoriogerar"%> 

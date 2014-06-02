@@ -1,0 +1,203 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+.pretty th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.pretty th .asc {
+	
+  background-image: url(/images/seta-pra-cima.gif);
+}
+
+.pretty th .desc {
+  background-image: url(/images/seta-pra-baixo.gif);
+}
+
+.leftprojeto{
+	float: left;
+
+}
+
+.rightprojeto{
+	float:right;
+
+}
+
+
+.cadastrarbutton{
+	margin-left: 10px;
+	background: image-url("botao1.jpg") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.cadastrarbutton:hover{
+	background: image-url("botao1-2.jpg") no-repeat;
+}
+.consultarbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: image-url("botao2.jpg") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.consultarbutton:hover{
+	background: image-url("botao2-2.jpg") no-repeat;
+}
+.relatoriosbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: image-url("botao3.jpg") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.relatoriosbutton:hover{
+	background: image-url("botao3-2.jpg") no-repeat;
+}
+.vendasbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: image-url("botao4.jpg") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.vendasbutton:hover{
+	background: image-url("botao4-2.jpg") no-repeat;
+}
+.clientesbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: image-url("clientesc.png") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.clientesbutton:hover{
+	background: image-url("clientesc-2.png") no-repeat;
+}
+.funcionariosbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: image-url("func1.png") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.funcionariosbutton:hover{
+	background: image-url("func1-2.png") no-repeat;
+}
+.categoriasbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: image-url("categoriasc.png") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.categoriasbutton:hover{
+	background: image-url("categoriasc-2.png") no-repeat;
+}
+.produtosbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: image-url("prod1.png") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.produtosbutton:hover{
+	background: image-url("prod1-2.png") no-repeat;
+}
+.novoclientesbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: image-url("c1.png") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.novoclientesbutton:hover{
+	background: image-url("c1-2.png") no-repeat;
+}
+.novofuncionariosbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: image-url("f1.png") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.novofuncionariosbutton:hover{
+	background: image-url("f2.png") no-repeat;
+}
+.novocategoriasbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: image-url("cat1.png") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.novocategoriasbutton:hover{
+	background: image-url("cat1-2.png") no-repeat;
+}
+.novoprodutosbutton{
+	margin-top: 10px;
+	margin-left: 10px;
+	background: image-url("p1.png") no-repeat;
+	width: 120px;
+	height: 120px;
+}
+.novoprodutosbutton:hover{
+	background: image-url("p1-2.png") no-repeat;
+}
+body{
+	background-repeat: no-repeat; 
+	
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center; 
+}
+.teste p{
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+.relatoriogerar {
+   border-top: 1px solid #6b6b6b;
+   background: #525252;
+   background: -webkit-gradient(linear, left top, left bottom, from(#d1d1d1), to(#525252));
+   background: -webkit-linear-gradient(top, #d1d1d1, #525252);
+   background: -moz-linear-gradient(top, #d1d1d1, #525252);
+   background: -ms-linear-gradient(top, #d1d1d1, #525252);
+   background: -o-linear-gradient(top, #d1d1d1, #525252);
+   padding: 7.5px 15px;
+   -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 17px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   text-align: center;
+   vertical-align: middle;
+   }
+.relatoriogerar {
+   border-top-color: #6b6b6b;
+   background: #6b6b6b;
+   color: #ffffff;
+   }
+.relatoriogerar:active {
+   border-top-color: #454545;
+   background: #454545;
+   }

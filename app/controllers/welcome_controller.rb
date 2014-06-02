@@ -8,6 +8,7 @@ class WelcomeController < ApplicationController
 	end
 
 	def relatorios
+		@vendas = Venda.all
 	end
 
 	def cadastrar

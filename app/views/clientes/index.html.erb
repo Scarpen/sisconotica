@@ -1,43 +1,35 @@
-<h1>Listando Clientes</h1>
+<br>
+<h2>Listando Clientes</h2>
+<br>
 
-<table class="table table-hover table-bordered table-striped">
+<table class="table table-hover table-bordered" style="background: #ffffff">
   <thead>
     <tr>
       <th>Nome</th>
-      <th>Endereco</th>
-      <th>Fone Residencial</th>
-      <th>Fone Celular</th>
+      <th>Telefone Celular</th>
       <th>CPF</th>
-      <th>Foto Cliente</th>
       <th>Email</th>
-      <th>Data Nascimento</th>
-      <th>Bairro</th>
       <th>Cidade</th>
-      <th>CEP</th>
-      <th>Estado</th>
-      <th colspan=3></th>
+      <th colspan=3>Ações</th>
 
     </tr>
   </thead>
+  
 
   <tbody>
     <% @clientes.each do |cliente| %>
       <tr>
         <td><%= cliente.nome %></td>
-        <td><%= cliente.endereco %></td>
-        <td><%= cliente.foneResidencial %></td>
         <td><%= cliente.foneCelular %></td>
         <td><%= cliente.cpf %></td>
-        <td><%= cliente.fotoCliente %></td>
         <td><%= cliente.email %></td>
-        <td><%= cliente.dataNascimento %></td>
-        <td><%= cliente.bairro %></td>
         <td><%= cliente.cidade %></td>
-        <td><%= cliente.cep %></td>
-        <td><%= cliente.estado %></td>
         <td><%= link_to 'Mostrar', cliente %></td>
         <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
-        <td><%= link_to 'Apagar', cliente, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' } %></td>
+        <%if current_funcionario.tipo == "Administrador"%>
+        <td>
+        <%= link_to 'Apagar', cliente, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -1,6 +1,9 @@
+<br>
+<h2> Informações do Cliente: </h2>
+<div class="teste">
 <p id="notice"><%= notice %></p>
 
-<p>
+<p >
   <strong>Nome:</strong>
   <%= @cliente.nome %>
 </p>
@@ -23,11 +26,6 @@
 <p>
   <strong>Cpf:</strong>
   <%= @cliente.cpf %>
-</p>
-
-<p>
-  <strong>Fotocliente:</strong>
-  <%= @cliente.fotoCliente %>
 </p>
 
 <p>
@@ -59,6 +57,6 @@
   <strong>Estado:</strong>
   <%= @cliente.estado %>
 </p>
-
+</div>
 <%= link_to 'Edit', edit_cliente_path(@cliente) %> |
 <%= link_to 'Back', clientes_path %>
