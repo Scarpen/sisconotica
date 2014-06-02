@@ -2,21 +2,30 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :nome %>
-    <%= f.input :endereco %>
-    <%= f.input :foneResidencial %>
-    <%= f.input :foneCelular %>
-    <%= f.input :cpf %>
+    <%= f.input :nome, label: "Nome Completo:", :require => true %>
+    <%= f.input :endereco, :require => true %>
+    <%= f.input :foneResidencial, input_html: { class: 'telefone'} %>
+    <%= f.input :foneCelular, input_html: { class: 'telefone'}, :require => true %>
+    <%= f.input :cpf, input_html: { id: 'cpf'}, :require => true %>
     <%= f.input :fotoCliente %>
-    <%= f.input :email %>
-    <%= f.input :dataNascimento %>
+    <%= f.input :email, :require => true %>
+    <div id="datetimepicker" class="input-append date">
+              <input data-format="dd/MM/yyyy hh:mm:ss" type="text" name="atividade[prazo]"></input>
+              <span class="add-on">
+                <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                </i>
+              </span>
+    </div>
     <%= f.input :bairro %>
     <%= f.input :cidade %>
-    <%= f.input :cep %>
-    <%= f.input :estado %>
+    <%= f.input :cep, input_html: { id: 'cep'} %>
+    <%= f.input :estado, :label => "Estado", :collection => ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR,","SC","SP","SE","TO"], :selected => "Escolha" %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Cadastrar cliente"%>
   </div>
 <% end %>
+<script type="text/javascript">
+
+</script>

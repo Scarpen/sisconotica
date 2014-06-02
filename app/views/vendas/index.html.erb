@@ -1,4 +1,4 @@
-<h1>Listing vendas</h1>
+<h1>Gerar Relatorio Vendas</h1>
 
 <table>
   <thead>
@@ -21,22 +21,6 @@
 </table>
 
 <br>
-
+<%= link_to "Gerar Relatorio", vendas_path(:format => "pdf") %>
 <%= link_to 'New Venda', new_venda_path %>
 
-<script>
-$(document).ready(function () {
-    $('.botao').click(function () {
-      alert("teste");
-
-    });
-
-    alert("teste");
-    $("#carrinho th a, #carrinho .pagination a #carrinho_busca").live("click", function() {
-      $.getScript(this.href);
-    return false;
-  });
-
-}); 
-
-</script>

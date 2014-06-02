@@ -15,8 +15,11 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
-
+//= require maskedinput
 $(function() {
+	$("#cpf").mask("999.999.999-99");
+	$(".telefone").mask("(99)9999-9999");
+	$("#cep").mask("99999-999");
   $("#produtos th a, #produtos.pagination a").live("click", function() {
     $.getScript(this.href);
     return false;
@@ -25,4 +28,6 @@ $(function() {
     $.get($("#produtos_search").attr("action"), $("#produtos_search").serialize(), null, "script");
     return false;
   });
+
 });
+

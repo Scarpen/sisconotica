@@ -1,4 +1,5 @@
 class TipoProdutosController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_funcionario!
   before_action :set_tipo_produto, only: [:show, :edit, :update, :destroy]
 

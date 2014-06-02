@@ -8,8 +8,9 @@
 
 f = Funcionario.new
 f.nome = "Admin"
-f.cpf = "123456789"
+f.cpf = "123.456.789-00"
 f.password = "administrador"
 f.password_confirmation = "administrador"
 f.email = "admin@sisconotica.com"
+f.tipo = "Administrador"
 f.save

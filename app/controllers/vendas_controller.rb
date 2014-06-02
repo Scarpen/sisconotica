@@ -1,4 +1,5 @@
 class VendasController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_funcionario!
   before_action :set_venda, only: [:show, :edit, :update, :destroy]
 
@@ -26,28 +27,31 @@ class VendasController < ApplicationController
   # GET /vendas/new
   def new
     @venda = Venda.new
-
+    @valorTotal = 0
     produtos = params[:produtos]
     if produtos == nil
       @produtos = Array.new
     else
       @produtos = params[:produtos]
+
     end
+
+
     
     if  params[:produto] != nil
 
       @produtos << params[:produto]
     end
-    if params[:fechar] != nil
-      asd
-      @venda.data = Date.today
-      valorTotal = 0
-      @produtos.each do |p|
+
+    @produtos.each do |p|
         produto = Produto.find(p)
-        valorTotal += produto.precoVenda
-      end
+        @valorTotal += produto.precoVenda
+    end
+    if params[:fechar] != nil
+      @venda.data = Date.today
+
       @venda.cliente_id = params[:cliente]
-      @venda.valorTotal = valorTotal
+      @venda.valorTotal = @valorTotal
       @venda.funcionario_id = current_funcionario.id
       if @venda.save
         
@@ -59,7 +63,7 @@ class VendasController < ApplicationController
           intermediario.valorUnit = produto.precoVenda
           intermediario.save
         end
-      redirect_to vendas_path
+      redirect_to new_venda_path, notice: 'A Venda foi registrada com sucesso.' 
       end
     end
     @produtos_busca = Produto.all

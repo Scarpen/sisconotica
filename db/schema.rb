@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140601180417) do
+ActiveRecord::Schema.define(version: 20140602040113) do
 
   create_table "clientes", force: true do |t|
     t.string   "nome"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20140601180417) do
     t.date     "dataNascimento"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type"
   end
 
   add_index "funcionarios", ["email"], name: "index_funcionarios_on_email", unique: true

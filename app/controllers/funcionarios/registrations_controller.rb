@@ -1,5 +1,5 @@
 class Funcionarios::RegistrationsController < Devise::RegistrationsController
-  
+   prepend_before_filter :require_no_authentication, only: [ :cancel ]
 
   before_filter :configure_permitted_parameters
   def create
@@ -11,7 +11,7 @@ class Funcionarios::RegistrationsController < Devise::RegistrationsController
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_flashing_format?
         sign_up(resource_name, resource)
-        respond_with resource, location: after_sign_up_path_for(resource)
+        
       else
         set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
         expire_data_after_sign_in!
@@ -21,6 +21,7 @@ class Funcionarios::RegistrationsController < Devise::RegistrationsController
       clean_up_passwords resource
       respond_with resource
     end
+
   end
 
   
@@ -30,10 +31,13 @@ class Funcionarios::RegistrationsController < Devise::RegistrationsController
   # Strong parameters devise
   def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) do |u| 
-        u.permit(:email, :password, :password_confirmation, :login, :nome, :cpf,:foneResidencial,:foneCelular,:Endereco, :bairro, :estado, :cidade, :cep, :imagem, :fotoFuncionario, :DataNascimento, :type)
+        u.permit(:email, :password, :password_confirmation, :login, :nome, :cpf,:foneResidencial,:foneCelular,:endereco, :bairro, :estado, :cidade, :cep, :imagem, :fotoFuncionario, :dataNascimento, :type, :tipo)
       end
       devise_parameter_sanitizer.for(:account_update) do |u| 
-        u.permit(:email, :password, :password_confirmation, :login, :nome, :cpf,:foneResidencial,:foneCelular,:Endereco, :bairro, :estado, :cidade, :cep, :imagem, :fotoFuncionario, :DataNascimento, :type)
+        u.permit(:email, :password, :password_confirmation, :login, :nome, :cpf,:foneResidencial,:foneCelular,:endereco, :bairro, :estado, :cidade, :cep, :imagem, :fotoFuncionario, :dataNascimento, :type, :tipo)
     end
+  end
+  def after_sign_up_path_for(resource)
+    
   end
 end

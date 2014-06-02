@@ -1,5 +1,5 @@
 
-    
+     Valor da Venda <%= @valorTotal %>
     <table class="table">
         <tr>
           <th>Nome</th>
@@ -19,4 +19,9 @@
 
     </table>
 
-    <%= link_to new_venda_path,:produtos => @produtos, :fechar => "Concluir", class: "btn btn-primary" %> 
+    <%= link_to "Fechar Venda", :produtos => @produtos, :fechar => "Concluir" do %>
+      <div class="btn btn-primary">
+      Fechar Venda
+      </div>
+    <% end %> 
+

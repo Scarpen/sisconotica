@@ -13,7 +13,7 @@
 		</div>
 
 		<div class="content">
-    <%= f.input :cpf, required: false, autofocus: true, :placeholder => "CPF", input_html: { class: 'input username' }, :label => false %>
+    <%= f.input :cpf, required: false, autofocus: true, :placeholder => "CPF", input_html: { class: 'input username', id: 'cpf'}, :label => false %>
     <div class="user-icon"></div>
 
     <%= f.input :password, required: false, input_html: { class: 'input username' }, :label => false, :placeholder => "Senha"%>
@@ -28,3 +28,7 @@
 <% end %>
 </div>
 
+
+<script type="text/javascript">
+
+</script>

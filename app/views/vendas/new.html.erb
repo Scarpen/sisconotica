@@ -9,14 +9,7 @@
 	<%= render :partial => "lista"%> 
 	</div>  
 
-
-  	<%= form_tag new_venda_path, :method => 'post',:id=> "carrinho_busca", :class => "form-search" do %>
-    <div class="col-md-3">
-      <%= text_field_tag :search, nil, :placeholder => "Nome", class: "form-control" %>
-    </div>
-    <%= submit_tag "Procurar", :name => nil, data: { toggle: "modal", target: "#produto" }, class: "btn"%>
-  	<% end %>
-    </p>
+<%= submit_tag "Adicionar Produto", :name => nil, data: { toggle: "modal", target: "#produto" }, class: "btn"%>
   
 	<div id="carrinho"><%= render 'carrinho'  %></div>
 

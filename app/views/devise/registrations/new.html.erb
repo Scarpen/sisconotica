@@ -1,28 +1,31 @@
+<div class="container">
 <h2>Cadastrar</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { class: 'form-horizontal' }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-  	<%= f.input :nome, label: "Nome", required: true, autofocus: true %>
+
+  	 <%= f.input :nome, label: "Nome Completo: ", required: true, autofocus: true %>  
+    <%= f.input :cpf, label: "CPF", required: true, input_html: {id: 'cpf'}%>
+    <%= f.input :tipo, :label => "Tipo", :collection => ["Vendedor","Administrador"], :selected => "Vendedor" %>
     <%= f.input :email, label: "Email", required: true  %>
     <%= f.input :password, label: "Senha" ,required: true  %>
     <%= f.input :password_confirmation, label: "Confirme a sua Senha",required: true %>
-    <%= f.input :foneResidencial, label: "Telefone Residencial" %>
-    <%= f.input :foneCelular, label: "Telefone Celular" %>
+    <%= f.input :dataNascimento, label: "Data Nascimento" %>
+    <%= f.input :foneResidencial, label: "Telefone Residencial", input_html: { class: 'telefone'}%>
+    <%= f.input :foneCelular, label: "Telefone Celular" , input_html: { class: 'telefone'}%>
     <%= f.input :endereco, label: "Endereço" %>
-    <%= f.input :cpf, label: "CPF"%>
     <%= f.input :bairro, label: "Bairro"%>
-    <%= f.input :estado, label: "Estado"%>
+    <%= f.input :estado, :label => "Estado", :collection => ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR,","SC","SP","SE","TO"], :selected => "Escolha" %>
     <%= f.input :cidade, label: "Cidade"%>
-    <%= f.input :cep, label: "CEP"%>
-    <%= f.input :dataNascimento, label: "Data Nascimento"%>
-  </div>
+    <%= f.input :cep, label: "CEP", input_html: {id: 'cep'}%>
+    
 
   <div class="form-actions">
-    <%= f.button :submit, "Registrar" %>
+    <%= f.button :submit, "Registrar", class: "btn btn-primary"%>
   </div>
 <% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+<script type="text/javascript">
 
+</script>

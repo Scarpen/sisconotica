@@ -10,7 +10,6 @@
     <tr>
       <th>Modelo</th>
       <th>Preco Venda</th>
-      <th>Quantidade Fisica</th>
       <th>Cor</th>
       <th>Tamanho</th>
       <th>Quantidade Estoque</th>
@@ -24,11 +23,10 @@
       <tr>
         <td><%= produto.modelo %></td>
         <td><%= produto.precoVenda %></td>
-        <td><%= produto.quant_fisica %></td>
         <td><%= produto.cor %></td>
         <td><%= produto.quanti_estoque %></td>
         <td><%= produto.unidade %></td>
-        <td> <%= link_to new_venda_path,:produtos=> @produtos, :produto=> produto %> </td>
+        <td> <%= link_to "Adicionar Produto", :produtos=> @produtos, :produto=> produto %> </td>
       </tr>
     <% end %>
   </tbody>

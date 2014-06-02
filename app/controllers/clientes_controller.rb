@@ -1,5 +1,6 @@
 
 class ClientesController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_funcionario!
   before_action :set_cliente, only: [:show, :edit, :update, :destroy]
 

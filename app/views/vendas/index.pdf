@@ -1,3 +1,5 @@
+<h1> Relatorio de Vendas </h1>
+
 <table width="100%" >
 	<thead style="text-align: left;">
 		<tr>
@@ -19,7 +21,7 @@
 			<% end %>
 		</td>
 		<td style="vertical-align: top;"> <%= v.data %></td>
-		<td style="vertical-align: top;"> <%= v.valorTotal %></td>
+		<td style="vertical-align: top;"> R$ <%= v.valorTotal %></td>
 	</tr>
 <% end %>
 </tbody>

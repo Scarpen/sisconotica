@@ -16,7 +16,9 @@ gem "simple_form"
 gem 'will_paginate'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf'
-
+gem 'maskedinput-rails'
+gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails'
 # Use sqlite3 as the database for Active Record
 group :development do
 gem 'sqlite3'
