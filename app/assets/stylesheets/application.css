@@ -27,3 +27,12 @@
   background-image: url(/images/seta-pra-baixo.gif);
 }
 
+.leftprojeto{
+	float: left;
+
+}
+
+.rightprojeto{
+	float:right;
+
+}

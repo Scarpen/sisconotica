@@ -6,65 +6,31 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body style="background: url(<%=asset_path 'images/bg.png'%>)">
+<body style="background: url(<%=asset_path 'images/bg.png'%>);">
+<div class="corpo">
+    <div class="top" >
+      <% if funcionario_signed_in? %>
+      <%= link_to "Produtos", :produtos %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <% if funcionario_signed_in? %>
+      <%= link_to "Logout", destroy_funcionario_session_path, method: 'delete', class: "blog-nav-item pull-right" %>
+      <%= link_to current_funcionario.email, edit_funcionario_registration_path(current_funcionario), class: "blog-nav-item pull-right" %>
+      <% else %>
+      <%= link_to "Register", new_funcionario_registration_path, class: "blog-nav-item pull-right" %>
+      <%= link_to "Login", new_funcionario_session_path, class: "blog-nav-item pull-right" %>
+      <% end %>
 
-<% if funcionario_signed_in? %>
-<%= link_to "Produtos", :produtos %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-		<% if funcionario_signed_in? %>
-	      	<%= link_to "Logout", destroy_funcionario_session_path, method: 'delete', class: "blog-nav-item pull-right" %>
-	      	<%= link_to current_funcionario.email, edit_funcionario_registration_path(current_funcionario), class: "blog-nav-item pull-right" %>
-		<% else %>
-			<%= link_to "Register", new_funcionario_registration_path, class: "blog-nav-item pull-right" %>
-			<%= link_to "Login", new_funcionario_session_path, class: "blog-nav-item pull-right" %>
-		<% end %>
-		<div id="topPan"><a href="http://www.free-css.com/"><img src="images/logo.gif" title="Green Solutions" alt="Green Solutions" width="204" height="57" border="0"/></a>
- 
-</div>
-<!-- <div id="headerPan">
-  <div id="headerPanleft">
-<div id="headerPan">
-  <div id="headerPanleft">
-    <div id="ourblog">
-      <h2>Cadastrar</h2>
-      <p>Desktop publishing</p>
-      <a href="http://www.free-css.com/">&nbsp;</a> </div>
-    <div id="possib">
-      <h2>Consultar</h2>
-      <p>Desktop publishing</p>
-      <a href="http://www.free-css.com/">&nbsp;</a> </div>
-    <div id="solution">
-      <h2>Relatórios</h2>
-      <p>Desktop publishing</p>
-      <a href="http://www.free-css.com/">&nbsp;</a> </div>
-    <div id="ourblog1">
-      <h2>Vendas</h2>
-      <p>Desktop publishing</p>
-      <a href="http://www.free-css.com/">&nbsp;</a> </div>
-  </div>
-  <h1>best Fresh Solution</h1>
-</div>
-<div id="bodyPan">
+    </div>
+    <div class="leftprojeto">
+    </div>
 
-  <div id="rightPan">
-    <div id="rightbodyPan">
-      
+    <div class="rightprojeto">
+      <%= yield %>
     </div>
   </div>
-</div>
-<div id="footerPan">
-  <div id="footernextPan">
-
-  </div>
-</div>
- -->
-<%= yield %>
-
-<% else %>
-<%= yield %>
-<%end%>
-
-
+  <% else %>
+  <%= yield %>
+  <%end%>
 </body>
 </html>
